@@ -1,7 +1,6 @@
 'use strict';
 
 weatherApp.factory('currentWeatherAppData', function($resource, $q){
-	//var resource = $resource('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric');
 	
 	var resource = $resource('http://api.openweathermap.org/data/2.5/weather?q=:city&units=metric', {city:'@city'});
 		return {

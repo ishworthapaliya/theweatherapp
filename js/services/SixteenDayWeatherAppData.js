@@ -1,9 +1,7 @@
 'use strict';
 
 weatherApp.factory('sixteenDayWeatherAppData', function($resource, $q){
-	//var resource = $resource('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric');
-	
-	//var resource = $resource('http://api.openweathermap.org/data/2.5/weather?q=:city&units=metric', {city:'@city'});
+
 	var resource = $resource('http://api.openweathermap.org/data/2.5/forecast/daily?q=:city&mode=json&units=metric&cnt=16', {city:'@city'});
 		return {
 			getWeatherData: function(city){
